@@ -5,6 +5,7 @@ import 'package:flutter_weather/cubit/theme/theme.dart';
 import 'package:flutter_weather/cubit/weather/cubit/weather_cubit.dart';
 import 'package:flutter_weather/cubit/weather/weather.dart';
 import 'package:flutter_weather/cubit/weather/widgets/weather_empty.dart';
+import 'package:flutter_weather/flavours/flavours_configurefile.dart';
 import 'package:weather_repository/weather_repository.dart';
 
 import '../../../view/search/search.dart';
@@ -57,7 +58,12 @@ class _WeatherViewState extends State<WeatherView> {
           },
         ),
         actions: [
-          /* IconButton(
+          Padding(
+            padding: const EdgeInsets.only(right: 15.0,top: 15),
+            child: Text("${FlavoursConfig.getInstance().apptitle}",
+             textAlign: TextAlign.center,),
+          )
+           /*IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.of(context).push<void>(

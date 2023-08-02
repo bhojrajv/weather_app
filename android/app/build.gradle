@@ -25,7 +25,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
+
+
 android {
+
+
     namespace "com.example.flutter_weather"
     compileSdkVersion flutter.compileSdkVersion
     ndkVersion flutter.ndkVersion
@@ -59,6 +63,19 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
+        }
+    }
+    flavorDimensions "app"
+    productFlavors {
+        dev_main {
+            dimension "app"
+            resValue "string", "app_name", "devmain flavor example"
+            applicationIdSuffix ".devmain"
+        }
+        main_comman {
+            dimension "app"
+            resValue "string", "app_name", "flutter_weather flavor example"
+            applicationIdSuffix ".weather"
         }
     }
 }

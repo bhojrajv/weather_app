@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_weather/cubit/location_cubit/locationcubit_cubit.dart';
 import 'package:flutter_weather/cubit/theme/theme.dart';
-import 'package:flutter_weather/cubit/weather/weather.dart';
 import 'package:flutter_weather/view/splash_screen.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:weather_repository/weather_repository.dart';
+
+import 'flavours/flavours_configurefile.dart';
 
 class WeatherApp extends StatelessWidget {
   const WeatherApp({required WeatherRepository weatherRepository, super.key})
@@ -36,17 +36,11 @@ class WeatherAppView extends StatelessWidget {
     final textTheme = Theme.of(context).textTheme;
     return BlocBuilder<ThemeCubit, Color>(
       builder: (context, color) {
+        FlavoursConfig.getInstance()..context =context
+        ..color=color;
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          theme: ThemeData(
-            primaryColor: color,
-            textTheme: GoogleFonts.rajdhaniTextTheme(),
-            appBarTheme: AppBarTheme(
-              titleTextStyle: GoogleFonts.rajdhaniTextTheme(textTheme)
-                  .apply(bodyColor: Colors.white)
-                  .titleLarge,
-            ),
-          ),
+          theme: FlavoursConfig.getInstance().apptheme,
           home: const SplashScreen(),
         );
       },
