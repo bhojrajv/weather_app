@@ -1,4 +1,10 @@
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/wlogo.jpg"
+  image_path: "assets/dev_main/wlogo.jpg"
+flutter:
+  flavor:
+    dev_main:
+      flavorType: "dev_main"
+      assets:
+        - assets/dev_main/ # Add the dev flavor icons

@@ -39,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: AnimatedOpacity(
               duration: const Duration(milliseconds: 1600),
               opacity: animate ? 1 : 0,
-              child: const Image(image: AssetImage('assets/wlogo.jpg'), width: 40,height: 40,),
+              child: const Image(image: AssetImage('assets/dev_main/wlogo.jpg'), width: 40,height: 40,),
             ),
           ),
           AnimatedPositioned(

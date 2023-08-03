@@ -71,11 +71,19 @@ android {
             dimension "app"
           //  resValue "string", "app_name", "devmain flavor example"
             applicationIdSuffix ".devmain"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/launcher_icon",
+                   // appIconRound: "@mipmap/ic_launcher_test_round"
+            ]
         }
         main_comman {
             dimension "app"
             //resValue "string", "app_name", "flutter_weather flavor example"
             applicationIdSuffix ".weather"
+            manifestPlaceholders = [
+                    appIcon: "@mipmap/launcher_icon",
+                    // appIconRound: "@mipmap/ic_launcher_test_round"
+            ]
         }
     }
 }

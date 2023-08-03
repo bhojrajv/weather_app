@@ -1,4 +1,10 @@
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/weatherlogo.png"
+  image_path: "assets/wlogo.jpg"
+flutter:
+  flavor:
+    main_comman:
+      flavorType: "main_comman"
+      assets:
+        - assets/

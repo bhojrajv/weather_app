@@ -29,7 +29,20 @@ dev_dependencies:
   json_serializable: ^6.0.0
   mocktail: ^0.3.0
   flutter_launcher_icons: "^0.13.1"
-flutter_launcher_icons:
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/weatherlogo.png"
+  flutter:
+  flavor:
+    dev_main:
+      flavorType: "dev_main"
+      assets:
+        - assets/dev_main/ # Add the dev flavor icons
+    main_comman:
+      flavorType: "main_comman"
+      assets:
+        - assets/ # Add the prod flavor icons
 #  android: "launcher_icon"
 #  ios: true
 #  image_path: "assets/weatherlogo.png"
@@ -51,3 +64,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/dev_main/
